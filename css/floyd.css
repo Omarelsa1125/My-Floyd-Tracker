@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #d67999;
+    color: white;
+}
+
+.gold {
+    color: gold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* max-width: 400px; */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5em;
+}
+
+#heading-container {
+    margin-bottom: 3em;
+}
+
+#heading-container h1 {
+    margin-bottom: 0.5em;
+}
+
+.floyd-data-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #a04f6b;
+    border-radius: 15px;
+    width: 100%;
+    /* max-width: 350px; */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* background: #a04f6b url("../assets/ui_FloydFound_IF.png") center/cover no-repeat; /* Background image */
+}
+
+/* Profile Image - Overlapping the Card */
+.profile-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -50px;
+    margin-bottom: 0.25em;
+    position: relative;
+    z-index: 10;
+    border: 5px solid #a04f6b; /* Matches card background */
+    background: #a04f6b; /* Fill color */
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;   
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.platform-image-container {
+    width: 1.5em;
+    aspect-ratio: 1/1;
+}
+
+.platform-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.hydra {
+    font-size: 0.9rem;
+    color: #ffdfdf;
+    font-style: italic;
+}
+
+.win-loss {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #c46788;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-transform: uppercase; /* Makes it more defined */
+    letter-spacing: 1px;
+}
+
+a.win-loss {
+    text-decoration: none;
+    color: inherit;
+    text-transform: none;
+}
+
+/* Challenges Section */
+.challenge-section {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compact-button-toggler {
+    /* display: block; */
+    /* margin-top: 10px; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    align-content: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.compact-button-toggler input {
+    /* margin-right: 5px; */
+    /* width: auto; */
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    width: 1em;
+    aspect-ratio: 1/1;
+
+    appearance: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: none;
+}
+
+.compact-button-toggler input:checked {
+    background-color: #e08baf;
+}
+
+#short-version-container {
+    display: none;
+    justify-content: center;
+    width: 100%;
+}
+
+.challenge-section-all {
+    /* margin-top: 0.5em; */
+    /* margin-bottom: 0.5em; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Wrap checkboxes & labels in a column */
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 85%;
+}
+
+/* Row of checkboxes */
+/* .checkbox-group {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+} */
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.challenge-legend {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.challenge-legend-item {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-grow: 0;
+    gap: 0.5em;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkboxes */
+.checkbox-group input, .challenge-legend input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e08baf;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+    margin-bottom: 0.7em;
+}
+
+.challenge-legend input {
+    margin: 0;
+}
+
+.checkbox-group input::after, .challenge-legend input::after {
+    content: attr(data-index);
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.challenge-legend input::after {
+    content: "1";
+}
+
+
+.checkbox-group input.challenge-inactive, .challenge-legend input.challenge-inactive {
+    color: #ddd;
+    font-weight: bold;
+    border-color: #3a2a2c;
+    background: #6f545a;
+}
+
+.checkbox-group input:checked, .challenge-legend input:checked {
+    background: #e08baf;
+    border-color: #ffb6c1;
+    position: relative;
+}
+
+.checkbox-group input:checked::after, .challenge-legend input:checked::after {
+    /* content: "✔"; */
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Labels below checkboxes */
+.checkbox-labels {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.checkbox-labels span {
+    width: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: #ffcccb;
+    font-size: 1rem;
+}
+
+
+.profile-challenges-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #a04f6b;
+    border-radius: 15px;
+    width: 100%;
+    /* max-width: 350px; */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1.5em;
+    text-align: center;
+    background: #a04f6b url("../assets/ui_FloydFound_IF.png") center/cover no-repeat; /* Background image */
+}
+
+.profile-challenges-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#challenges-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+#challenges-list li {
+    background: #c46788;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#challenges-list li:hover {
+    background: #e08baf;
+}
+
+.floyd-encounters, .floyd-last-state, .floyd-matches-till {
+    font-size: 1rem;
+    /* margin-top: 10px; */
+    color: white;
+    font-weight: bold;
+}
+
+.floyd-legend-info {
+    text-align: left;
+}
+
+.info-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #a04f6b;
+    border-radius: 15px;
+    width: 100%;
+    /* max-width: 350px; */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.info-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#hints-list, #fatalities-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+#hints-list li, #fatalities-list li {
+    background: #c46788;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: white;
+    text-align: left;
+}
+
+
+.kofi-section {
+    margin-top: 0.5em;
+}
